@@ -82,8 +82,8 @@ elif(choose==4):
     title=('Merge Sort')
     algorithm=merge_sort(array,0,n-1)
 fig,ax=plt.subplots()
-ax.set_title('title')
-bar_rec=ax.bar(range(len(array)),array,align='edge')
+ax.set_title(title)
+bar_rec=ax.bar(range(len(array)),array,align='edge',color='green')
 ax.set_xlim(0,n)
 ax.set_ylim(0,int(n*1.1))
 text=ax.text(0.02,0.95,'',transform=ax.transAxes)
@@ -93,5 +93,5 @@ def update_plot(array,rec,epochs):
         rect.set_height(val)
     epochs[0]+=1
     text.set_text('Epoch: '+str(epochs[0]))
-anima=anim.FuncAnimation(fig,func=update_plot,fargs=(bar_rec,epochs),frames=algorithm,interval=1,repeat=False)
+anima=anim.FuncAnimation(fig,func=update_plot,fargs=(bar_rec,epochs),frames=algorithm,interval=2,repeat=False)
 plt.show()
